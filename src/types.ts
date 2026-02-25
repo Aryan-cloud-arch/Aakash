@@ -1,8 +1,16 @@
+export interface Subject {
+  id: string;
+  name: string;
+  syllabus: string;
+  color: string;
+}
+
 export interface Question {
   id: string;
   number: number;
   text: string;
   options: string[];
+  subject: string; // Dynamic subject name
 }
 
 export interface PaperData {
@@ -11,9 +19,7 @@ export interface PaperData {
   testName: string;
   maxMarks: string;
   time: string;
-  physicsSyllabus: string;
-  chemistrySyllabus: string;
-  biologySyllabus: string;
+  subjects: Subject[];
   instructions: string[];
   questions: Question[];
   pageNumber: number;

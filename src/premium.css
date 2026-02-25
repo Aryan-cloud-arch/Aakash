@@ -1,0 +1,244 @@
+/* ========================================
+   ULTRA PREMIUM GATE ANIMATIONS
+   ======================================== */
+
+/* Floating orb animations for Gate 1 */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(60px, -40px) scale(1.1); }
+  50% { transform: translate(-30px, -80px) scale(0.95); }
+  75% { transform: translate(-60px, -20px) scale(1.05); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-50px, 30px) scale(1.08); }
+  50% { transform: translate(40px, 60px) scale(0.92); }
+  75% { transform: translate(70px, -10px) scale(1.05); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, -60px) scale(1.15); }
+  66% { transform: translate(50px, 40px) scale(0.9); }
+}
+
+/* Aurora animation for Gate 2 */
+@keyframes aurora {
+  0%, 100% { 
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    background-position: 50% 100%;
+    filter: hue-rotate(15deg);
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: hue-rotate(-10deg);
+  }
+  75% { 
+    background-position: 50% 0%;
+    filter: hue-rotate(5deg);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255,255,255,0.08); }
+  50% { border-color: rgba(255,255,255,0.16); }
+}
+
+@keyframes subtle-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes text-reveal {
+  0% { opacity: 0; letter-spacing: 8px; }
+  100% { opacity: 1; letter-spacing: -0.5px; }
+}
+
+/* Gate 1 specific */
+.gate1-container {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gate1-orb-1 {
+  animation: float1 20s ease-in-out infinite;
+}
+
+.gate1-orb-2 {
+  animation: float2 25s ease-in-out infinite;
+}
+
+.gate1-orb-3 {
+  animation: float3 18s ease-in-out infinite;
+}
+
+.gate1-card {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gate1-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04) !important;
+}
+
+.gate1-hint {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gate1-hint:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03) !important;
+}
+
+.gate1-logo {
+  animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gate1-title {
+  animation: text-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.gate1-btn {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.gate1-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.gate1-btn:hover {
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+
+/* Gate 2 specific */
+.gate2-container {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gate2-aurora {
+  animation: aurora 30s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+.gate2-card {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease;
+}
+
+.gate2-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.12) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(94,92,230,0.08) !important;
+}
+
+.gate2-hint {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease;
+}
+
+.gate2-hint:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+.gate2-logo {
+  animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.gate2-title {
+  animation: text-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.gate2-btn {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.gate2-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.gate2-btn:hover {
+  transform: translateY(-2px) scale(1.01) !important;
+}
+
+.gate2-pulse-ring {
+  animation: pulse-ring 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Input focus glow animation */
+.premium-input {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.premium-input:focus {
+  transform: scale(1.01);
+}
+
+/* Badge entrance */
+.gate-badge {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Footer fade */
+.gate-footer {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+/* Eye button hover */
+.eye-btn {
+  transition: all 0.2s ease !important;
+}
+
+.eye-btn:hover {
+  transform: translateY(-50%) scale(1.15) !important;
+  opacity: 1 !important;
+}
